@@ -1,9 +1,0 @@
-<h2>Faculty Email Finder</h2>
-<form action="/faculty/upload/" method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <label>엑셀 업로드 (Korean_name 컬럼 필수):</label>
-  <input type="file" name="file" accept=".xlsx,.xls"/>
-  <button type="submit">매칭 후 다운로드</button>
-</form>
-<a href="/faculty/search/">이름으로 검색하기</a>
-
