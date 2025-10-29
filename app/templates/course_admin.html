@@ -1,1 +1,23 @@
+<h2>(관리자용) 최종 정보 보기</h2>
+<form method="get">
+  <input type="password" name="password" maxlength="4" placeholder="7777">
+  <button type="submit">확인</button>
+</form>
+
+{% if allowed %}
+  <table border="1">
+    <tr>
+      <th>Name</th><th>Year Semester</th><th>Language</th><th>Course Title</th>
+      <th>Apply this semester</th>
+    </tr>
+    {% for cm in items %}
+    <tr>
+      <td>{{cm.name}}</td><td>{{cm.year_semester}}</td>
+      <td>{{cm.language}}</td><td>{{cm.course_title}}</td>
+      <td>{% if cm.apply_this_semester %}YES{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/course/admin/download/?password=7777">엑셀 다운로드</a>
+{% endif %}
 
